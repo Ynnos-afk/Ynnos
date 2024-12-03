@@ -1,0 +1,751 @@
+@font-face {
+    src: url(qcefonts/Zuume\ Regular.ttf);
+    font-family: Zuume;
+}
+
+@font-face {
+    src: url(qcefonts/Zuume\ ExtraLight.ttf);
+    font-family: ZuumeEL;
+}
+
+@font-face {
+    src: url(qcefonts/Zuume\ Light.ttf);
+    font-family: ZuumeL;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Zuume', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    --bg-color: #222327;
+    --text-color: #fff;
+    --main-color: #fd3029;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg-color);
+    background-color: #1a1a1a;
+    color: var(--text-color);
+    line-height: 1.5;
+    padding-top: 100px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 20px 10%;
+    transition: all 0.5s ease;
+    border-bottom: 1px solid gray;
+    background-color: #222327;
+}
+
+header span {
+    font-style: italic;
+    font-family: 'Zuume';
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.kyusilogo {
+    font-size: 28px;
+    margin-right: 3px;
+    width: 50px;
+    height: auto;
+}
+
+.logo span {
+    color: var(--text-color);
+    font-size: clamp( 1.5rem, 1.5vw, 2rem);
+    font-weight: 600;
+}
+
+.navbar {
+    display: flex;
+    transition: all 0.5s ease;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a {
+    color: var(--text-color);
+    font-size: clamp(1.3rem, 1.1vw, 1.5rem);
+    font-weight: 500;
+    padding: 5px 0;
+    margin: 0px 20px;
+    transition: all 0.5s ease;
+}
+
+.navbar li a:hover, 
+.navbar li a.active {
+    color: var(--main-color);
+}
+
+.navbar li a.active::after, 
+.navbar li a:hover::after {
+    content: "";
+    width: 25%;
+    height: 2px;
+    background: #fd3029;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+
+.header-main {
+    display: flex;
+    align-items: center;
+}
+
+.header-main a {
+    margin-right: 15px;
+    margin-left: 5px;
+    color: var(--text-color);
+    font-size: clamp(1.3rem, 1.2vw, 1.5rem);
+    font-weight: 500;
+    transition: all 0.5s ease;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    margin: 2px;
+}
+
+.user i {
+    color: var(--main-color);
+    font-size: 25px;
+    margin-right: 7px;
+}
+
+.cartcon {
+    display: flex;
+    align-items: center;
+}
+
+.cartcon i {
+    color: var(--main-color);
+    font-size: 25px;
+    margin-right: 7px;
+    margin-left: 7px;
+}
+
+.header-main a:hover {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 30px;
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: 1001;
+    display: none;
+}
+
+#menu-icon.bx-x {
+    color: var(--main-color);
+}
+
+@media (max-width: 1351px) {
+    header {
+        padding: 14px 2%;
+    }
+    .navbar a {
+        margin: 0px 15px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .navbar a {
+        margin: 0px 10px;
+    }
+}
+
+@media (max-width: 1000px) {
+    #menu-icon {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: -270px;
+        width: 270px;
+        height: auto;
+        background: #fd3029;
+        flex-direction: column;
+        padding: 20px 0;
+        border-radius: 10px;
+        transition: right 0.5s ease;
+        overflow-y: auto;
+    }
+    .navbar.open {
+        right: 2%;
+    }
+    .navbar a {
+        color: var(--text-color);
+        margin: 12px 0;
+        padding: 0px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .kyusilogo {
+        width: 35px;
+    }
+
+    body {
+        padding-top: 80px;
+    }
+
+}
+
+@media (max-width: 380px) {
+    header {
+        padding: 10px 5%;
+        flex-wrap: wrap;
+    }
+
+    body {
+        padding-top: 90px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        right: -570px;
+        width: 100%;
+        background: var(--main-color);
+        transition: right 0.5s ease;
+        padding: 20px 0;
+        z-index: 999;
+    }
+    .navbar.open {
+        right: 0;
+    }
+    .navbar a {
+        margin: 8px 0;
+        padding: 10px 15px;
+    }
+    .kyusilogo {
+        width: 27px;
+    }
+    .header-main {
+        flex: 1;
+    }
+
+    #menu-icon {
+        display: block;
+        font-size: 28px;
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .navbar a {
+        padding: 8px 10px;
+    }
+    .logo {
+        margin-right: auto;
+    }
+}
+
+/* Footer Kyusi Esports */
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    width: 100%;
+    background-color: #24262b;
+    padding: 50px 0;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: clamp(1.2rem, 1.2vw, 1.6rem);
+    color: #fff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #fd3029;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: clamp(1.1rem, 1.2vw, 1.7rem);
+    text-transform: capitalize;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #fff;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: #fd3029;
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #fd3029;
+    background-color: #fff;
+}
+
+/* Responsive */
+@media(max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+
+    .footer {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+/* Main content here Kyusi Esports */
+/* DEFAULT CSS NG CONTENTS AND SIGN UP */
+    
+.content {
+    margin: 15.625rem 9.375rem 0 8.6875rem;
+}
+
+.h1title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem); 
+    line-height: 4.125rem;
+    font-family: 'ZuumeEL';
+}
+
+.h2content {
+    font-size: clamp(1.25rem, 3vw, 2.5rem); 
+    font-family: 'ZuumeEL';
+    font-weight: 200;
+    color: #C1C1C1;
+    text-align: justify;
+}
+
+.box {
+    max-width: 101.25rem;
+    padding: 0 1.875rem;
+    margin: 9.375rem 0 12.5rem 6.25%;
+    width: 80%;
+    height: 12.5rem;
+    background-color: #181818;
+    display: flex;
+    align-items: center;
+    border-radius: 1.875rem;
+    font-weight: 500;
+    flex-wrap: wrap;
+}
+
+.jointheteam {
+    font-size: 1.8rem;
+    color: #cb0c43;
+    text-align: left;
+    margin-right: 1.25rem;
+    flex: 1;
+}
+
+.jtth1, .jtth2 {
+    transition: all 0.3s ease;
+}
+
+.jtth1 {
+    font-family: 'ZuumeEL';
+    font-size: 5.625rem;
+    margin-left: 1.875rem;
+    color: #cb0c43;
+}
+
+.jtth2 {
+    font-size: 1.80625rem;
+    color: rgb(0, 0, 0);
+}
+
+.inputsignup {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+}
+
+.inputtype {
+    width: 80%;
+    height: 2.5rem;
+    font-size: 1.125rem;
+    border-radius: 0.625rem;
+}
+
+.signup {
+    color: white;
+    margin-left: 0.625rem;
+    width: 8.125rem;
+    height: 2.5rem;
+    font-size: 1.0625rem;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    background-color: #cb0c43;
+}
+
+/* RESPONSIVENESS NG CONTENTS NG MEMBERSHIP */
+@media (max-width: 1611px) {
+    .content {
+        margin: 15.625rem 9.375rem 0 8.6875rem;
+    }
+
+    .box {
+        padding: 0 1.875rem;
+        margin: 9.375rem 0 12.5rem 6.25%;
+        width: 80%;
+        height: 12.5rem;
+        background-color: #181818;
+        border-radius: 1.875rem;
+        font-family: 'ZuumeEL', sans-serif;
+        font-weight: 500;
+    }
+
+    .jointheteam {
+        font-size: 1.8rem;
+        color: #0a0a0a;
+        text-align: left;
+        margin-right: -3.125rem;
+    }
+
+    .jtth1 {
+        font-size: 5rem;
+    }
+
+    .jtth2 {
+        font-size: 1.25rem;
+    }
+
+    .inputsignup {
+        width: 50%;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+    .inputtype {
+        width: 60%;
+    }
+}
+
+@media (max-width: 1370px) {
+    .content {
+        margin: 9.125rem 1rem 0 1.5rem;
+    }
+
+    .box {
+        padding: 0 1.875rem;
+        margin: 9.375rem 0 12.5rem 10.25%;
+        width: 80%;
+        height: 12.5rem;
+        background-color: #181818;
+        border-radius: 1.875rem;
+        font-family: 'ZuumeEL', sans-serif;
+        font-weight: 500;
+    }
+
+    .jointheteam {
+        font-size: 1.5rem;
+        color: #0a0a0a;
+        text-align: left;
+        margin-right: -3.1875rem;
+    }
+
+    .inputsignup {
+        width: 43%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    .inputtype {
+        width: 90%;
+    }
+
+    .signup {
+        width: 90%;
+    }
+}
+
+
+
+@media (max-width: 1024px) {
+    .content {
+        margin: 9.125rem 1rem 0 1.5rem;
+    }
+
+    .box {
+        padding: 0 1.875rem;
+        margin: 5.375rem 0 5.5rem 10.25%;
+        width: 80%;
+        height: 18.75rem;
+        background-color: #181818;
+        border-radius: 1.875rem;
+        font-family: 'ZuumeEL', sans-serif;
+        font-weight: 500;
+    }
+
+    .jointheteam {
+        font-size: 1.4rem;
+        color: #0a0a0a;
+        text-align: center;
+        margin-right: -.5rem;
+    }
+
+    .jtth1 {
+        font-size: 3.75rem;
+        justify-content: center;
+    }
+
+    .jtth2 {
+        font-size: 1.0625rem;
+    }
+
+    .inputsignup {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inputtype {
+        width: 60%;
+        margin-left: 5px;
+    }
+
+    .signup {
+        width: 60%;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        margin: 6.125rem 1rem 0 1.5rem;
+    }
+
+    .box {
+        padding: 0;
+        margin: 5.375rem 0 5.5rem 10.25%;
+        width: 80%;
+        height: 18.75rem;
+        background-color: #181818;
+        border-radius: 1.875rem;
+        font-family: 'ZuumeEL', sans-serif;
+        font-weight: 500;
+    }
+
+    .jointheteam {
+        font-size: 0.8rem;
+        color: #0a0a0a;
+        text-align: center;
+        margin-right: 1.25rem;
+    }
+
+    .jtth1 {
+        font-size: 2rem;
+    }
+
+    .jtth2 {
+        font-size: 0.5rem;
+    }
+
+    .inputsignup {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inputtype {
+        width: 60%;
+        margin-left: 10px;
+    }
+
+    .signup {
+        width: 60%;
+    }
+}
+
+@media (max-width: 600px) {
+    .content {
+        margin: 6.125rem 1rem 0 1.5rem;
+    }
+
+    .box {
+        padding: 0;
+        margin: 5.375rem 0 5.5rem 10.25%;
+        width: 80%;
+        height: 15.75rem;
+        background-color: #181818;
+        border-radius: 1.875rem;
+        font-family: 'ZuumeEL', sans-serif;
+        font-weight: 500;
+    }
+
+    .jointheteam {
+        font-size: 1.1rem;
+        color: #0a0a0a;
+        text-align: center;
+        margin-right: 1.25rem;
+    }
+
+    
+    .inputsignup {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 21px;
+    }
+
+    .inputtype {
+        width: 80%;
+    }
+
+    .signup {
+        width: 80%;
+    }
+}
+
+@media (max-width: 425px) {
+    .content {
+        margin: 5.125rem 1rem 0 1.5rem;
+    }
+
+    .box {
+        padding: 0;
+        margin: 4.375rem 0 4.5rem 10.25%;
+        width: 80%;
+        height: 14.75rem;
+        background-color: #181818;
+        border-radius: 1.875rem;
+        font-family: 'ZuumeEL', sans-serif;
+        font-weight: 500;
+    }
+
+    .jointheteam {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 1.1rem;
+        color: #0a0a0a;
+        text-align: center;
+        margin-top: -20px;
+    }
+    .jtth1 {
+        margin-left: -50px;
+    }
+    .jtth2 {
+        margin: -30px 0 0 15px;
+    }
+
+    
+    .inputsignup {
+        margin-top: -50px;
+        width: 90%;
+        margin-left: 12px;
+    }
+
+    .inputtype {
+        width: 90%;
+        height: 5%;
+    }
+
+    .signup {
+        width: 90%;
+        height: 5%;
+    }
+    ::placeholder {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 324px) {
+    .jointheteam {
+        padding-left: -50px;
+        font-size: clamp(0.5rem, 9vw, 1.5rem);
+    }
+}

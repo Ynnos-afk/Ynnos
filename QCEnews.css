@@ -1,0 +1,678 @@
+@font-face {
+    src: url(qcefonts/Zuume\ Regular.ttf);
+    font-family: Zuume;
+}
+
+@font-face {
+    src: url(qcefonts/Zuume\ ExtraLight.ttf);
+    font-family: ZuumeEL;
+}
+
+@font-face {
+    src: url(qcefonts/Zuume\ Light.ttf);
+    font-family: ZuumeL;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Zuume', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    --bg-color: #222327;
+    --text-color: #fff;
+    --main-color: #fd3029;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg-color);
+    background-color: #1a1a1a;
+    color: var(--text-color);
+    line-height: 1.5;
+    padding-top: 100px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 20px 10%;
+    transition: all 0.5s ease;
+    border-bottom: 1px solid gray;
+    background-color: #222327;
+}
+
+header span {
+    font-style: italic;
+    font-family: 'Zuume';
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.kyusilogo {
+    font-size: 28px;
+    margin-right: 3px;
+    width: 50px;
+    height: auto;
+}
+
+.logo span {
+    color: var(--text-color);
+    font-size: clamp( 1.5rem, 1.5vw, 2rem);
+    font-weight: 600;
+}
+
+.navbar {
+    display: flex;
+    transition: all 0.5s ease;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a {
+    color: var(--text-color);
+    font-size: clamp(1.3rem, 1.1vw, 1.5rem);
+    font-weight: 500;
+    padding: 5px 0;
+    margin: 0px 20px;
+    transition: all 0.5s ease;
+}
+
+.navbar li a:hover, 
+.navbar li a.active {
+    color: var(--main-color);
+}
+
+.navbar li a.active::after, 
+.navbar li a:hover::after {
+    content: "";
+    width: 25%;
+    height: 2px;
+    background: #fd3029;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+
+.header-main {
+    display: flex;
+    align-items: center;
+}
+
+.header-main a {
+    margin-right: 15px;
+    margin-left: 5px;
+    color: var(--text-color);
+    font-size: clamp(1.3rem, 1.2vw, 1.5rem);
+    font-weight: 500;
+    transition: all 0.5s ease;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    margin: 2px;
+}
+
+.user i {
+    color: var(--main-color);
+    font-size: 25px;
+    margin-right: 7px;
+}
+
+.cartcon {
+    display: flex;
+    align-items: center;
+}
+
+.cartcon i {
+    color: var(--main-color);
+    font-size: 25px;
+    margin-right: 7px;
+    margin-left: 7px;
+}
+
+.header-main a:hover {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 30px;
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: 1001;
+    display: none;
+}
+
+#menu-icon.bx-x {
+    color: var(--main-color);
+}
+
+@media (max-width: 1351px) {
+    header {
+        padding: 14px 2%;
+    }
+    .navbar a {
+        margin: 0px 15px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .navbar a {
+        margin: 0px 10px;
+    }
+}
+
+@media (max-width: 1000px) {
+    #menu-icon {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: -270px;
+        width: 270px;
+        height: auto;
+        background: #fd3029;
+        flex-direction: column;
+        padding: 20px 0;
+        border-radius: 10px;
+        transition: right 0.5s ease;
+        overflow-y: auto;
+    }
+    .navbar.open {
+        right: 2%;
+    }
+    .navbar a {
+        color: var(--text-color);
+        margin: 12px 0;
+        padding: 0px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .kyusilogo {
+        width: 35px;
+    }
+
+    body {
+        padding-top: 80px;
+    }
+
+}
+
+@media (max-width: 380px) {
+    header {
+        padding: 10px 5%;
+        flex-wrap: wrap;
+    }
+
+    body {
+        padding-top: 90px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        right: -570px;
+        width: 100%;
+        background: var(--main-color);
+        transition: right 0.5s ease;
+        padding: 20px 0;
+        z-index: 999;
+    }
+    .navbar.open {
+        right: 0;
+    }
+    .navbar a {
+        margin: 8px 0;
+        padding: 10px 15px;
+    }
+    .kyusilogo {
+        width: 27px;
+    }
+    .header-main {
+        flex: 1;
+    }
+
+    #menu-icon {
+        display: block;
+        font-size: 28px;
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .navbar a {
+        padding: 8px 10px;
+    }
+    .logo {
+        margin-right: auto;
+    }
+}
+
+/* Footer Kyusi Esports */
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    width: 100%;
+    background-color: #24262b;
+    padding: 50px 0;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: clamp(1.2rem, 1.2vw, 1.6rem);
+    color: #fff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #fd3029;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: clamp(1.1rem, 1.2vw, 1.7rem);
+    text-transform: capitalize;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #fff;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: #fd3029;
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #fd3029;
+    background-color: #fff;
+}
+
+/* Responsive */
+@media(max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+
+    .footer {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+/*CODES FOR CONTENTS*/
+
+
+.titlenews {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 160px 0 0 0;
+    font-family: 'ZuumeL';
+    font-weight: 300;
+    font-size: 70px;
+
+}
+.twocontainer {
+    margin: 1.625rem 0 8.6875rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.item1, .item2 {
+    border-radius: 20px;
+}
+
+.item1-whole-content {
+    margin: 20px 10px 0 40px;
+    
+}
+
+.item1-content {
+    margin-top: 10px;
+    color: white;
+    list-style: disc;
+    font-size: 2rem;
+    line-height: 1.2;
+    font-family: 'ZuumeL';
+    font-weight: 200;
+
+}
+
+.item1 {
+    background-color: #1a1818;
+    width: 20%;
+    height: auto;
+}
+.item2 {
+  background-color: #C20D43;
+  width: 60%;
+  display: flex; 
+  flex-direction: column;
+  align-items: flex-start; 
+  padding: 20px 20px 0 20px;
+}
+
+.astreusimg {
+    width: 53%;
+    height: auto;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+.astreus1 {
+    font-size: 50px;
+    font-family: 'ZuumeL';
+    font-weight: 300;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    
+}
+.a {
+    color: #000000;
+}
+
+.baba-ng-astreus {
+    padding: 0 15px 0 15px;
+    margin-top: 10px; 
+    font-size: 2rem;
+    line-height: 1.2;
+    color: #ececec;
+    text-align: justify;
+    font-family: 'ZuumeL';
+    font-weight: 300;
+}
+.h1h2 {
+    flex-direction: column;
+}
+
+.long-content {
+    color: #ececec;
+    font-family: 'ZuumeL';
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 1.6;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+    width: 99%;
+    margin-top: -470px;
+    margin-bottom: 50px; 
+}
+
+/* RESPONSIVENESS OF CONTENTS*/
+@media (max-width: 2560px) {
+.astreus1 {
+    font-size: clamp(10px, 10vw, 80px);
+}
+.baba-ng-astreus {
+    font-size: 40px;
+}
+}
+@media (max-width: 1997px) {
+.astreus1 {
+    font-size: clamp(10px, 10vw, 60px);
+}
+.baba-ng-astreus {
+    font-size: 30px;
+}
+}
+
+@media (max-width: 1440px) {
+
+.item1 {
+    margin-left: 0;
+}
+.item2 {
+    width: 70%;
+}
+
+.item1-content {
+    margin-top: 10px;
+    font-size: 1.6rem;
+}
+
+    .astreusimg {
+    width: 53%;
+    height: 320px;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+.astreus1 {
+    font-size: 40px;
+    font-family: 'ZuumeL';
+    font-weight: 300;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.baba-ng-astreus {
+    padding: 0 15px 0 15px;
+    margin-top: 10px; 
+    font-size: clamp(1rem, 2.2vw, 1.6rem);
+}
+.long-content {
+    font-size: 1.6rem;
+    margin-top: -390px;
+}
+}
+
+@media (max-width: 1024px) {
+.twocontainer {
+    gap: 10px;
+}
+
+.titlenews {
+    margin-top: 90px;
+    font-size: 50px;
+}
+
+.item1-content {
+    margin-top: 10px;
+    font-size: clamp(0.8rem, 2.2vw, 1.2rem);
+}
+
+
+.astreusimg {
+    width: 53%;
+    height: 270px;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+.astreus1 {
+    font-size: 30px;
+    font-family: 'ZuumeL';
+    font-weight: 300;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.baba-ng-astreus {
+    padding: 0 15px 0 15px;
+    margin-top: 10px; 
+    font-size: clamp(0.8rem, 2.2vw, 1.5rem);
+}
+.long-content {
+    font-size: clamp(0.8rem, 2.2vw, 1.2rem);
+    margin-top: -270px;
+}
+}
+
+
+
+@media (max-width: 768px) {
+    .twocontainer {
+    margin: 20px 0 50px 10px;
+    flex-direction: column;
+    gap: 10px;
+}
+    .titlenews {
+    margin-top: 90px;
+    font-size: 40px;
+}
+.item1 {
+    margin-left: 10px;
+    width: 95%;
+}
+.item2 {
+    margin-left: 10px;
+    width: 95%;
+    height: auto;
+}
+
+.item1-content {
+    margin-top: 10px;
+    font-size: clamp(1.5rem, 2.3vw, 2.5rem);
+}
+
+
+.astreusimg {
+    width: 50%;
+    height: 190px;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+.astreus1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.baba-ng-astreus {
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 26px; 
+    font-size: clamp(1rem, 2.3vw, 1.5rem);
+}
+.long-content {
+    margin-top: -230px;
+    font-size: clamp(1rem, 2.3vw, 1.5rem);
+}
+}
+
+@media (max-width: 606px) {
+.astreus1 {
+    font-size: 30px;
+    margin-top: -10px;
+}
+.long-content {
+    margin-top: -260px;
+}
+}
+
+@media (max-width: 499px) {
+.astreusimg {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 190px;
+    border-radius: 20px;
+    margin-right: 20px;
+}   
+.item2 {
+    display: flex;
+    flex-direction: column;
+}
+.img-content {
+    display: flex;
+    flex-direction: column;
+}
+.astreus1 {
+    margin-top: 10px;
+}
+}
+
+@media (max-width: 425px) {
+.twocontainer {
+    margin-right: 10px;
+}
+.item1-content {
+    font-size: clamp(1rem, 2vw, 2rem);
+}
+}
+

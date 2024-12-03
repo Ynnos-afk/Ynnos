@@ -1,0 +1,68 @@
+@font-face {
+    src: url(qcefonts/Zuume\ Regular.ttf);
+    font-family: Zuume;
+}
+
+@font-face {
+    src: url(qcefonts/Zuume\ ExtraLight.ttf);
+    font-family: ZuumeEL;
+}
+
+@font-face {
+    src: url(qcefonts/Zuume\ Light.ttf);
+    font-family: ZuumeL;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    font-family: ZuumeEL;
+  }
+  
+  .dashboard {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 20%;
+    background-color: #232323;
+    padding: 20px;
+    border-right: 1px solid #fff;
+  }
+  
+  .sidebar h2 {
+    color: red;
+    margin-bottom: 10px;
+    font-size: clamp(1.3rem, 1.8vw, 2rem);
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin: 5px 0;
+    font-size: clamp(1rem, 1.3vw, 2rem);
+    cursor: pointer;
+  }
+
+  .sidebar ul li:hover {
+    color: red;
+  }
+  
+  .content {
+    flex: 1;
+    background-color: #e0e0e0;
+    padding: 20px;
+    border: 20px solid #232323;
+  }
+  
+  .content h1 {
+    color: red;
+    font-size: clamp(1.3rem, 1.8vw, 2rem);
+  }
+  

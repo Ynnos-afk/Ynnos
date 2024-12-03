@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Payment Method</title>
+    <link rel="stylesheet" href="Modeofpayment.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Select Payment Method</h1>
+        </header>
+
+        <main>
+            <section class="payment-method">
+                <h2>Select Payment Method</h2>
+                
+                <div class="payment-options">
+                    <label>
+                        <input type="radio" name="payment" value="gcash" checked>
+                        GCash
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="bank-transfer">
+                        Bank Transfer
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="mastercard">
+                        Mastercard
+                    </label>
+                </div>
+
+                <div class="payment-details">
+                    <h3>Payment Information</h3>
+                    
+                    <div id="gcash-details" class="payment-info">
+                        <label for="gcashNumber">GCash Number:</label>
+                        <input type="text" id="gcashNumber" name="gcashNumber" required pattern="[0-9]{11}" title="Please enter a valid GCash number (11 digits)">
+                    </div>
+
+                    <div id="bank-transfer-details" class="payment-info" style="display:none;">
+                        <label for="bankAccount">Bank Account Number:</label>
+                        <input type="text" id="bankAccount" name="bankAccount" required pattern="[0-9]+" title="Please enter a valid bank account number (numbers only)">
+                    </div>
+
+                    <div id="mastercard-details" class="payment-info" style="display:none;">
+                        <label for="cardNumber">Card Number:</label>
+                        <input type="text" id="cardNumber" name="cardNumber" required pattern="[0-9]{16}" title="Please enter a valid Mastercard number (16 digits)">
+
+                        <label for="expirationDate">Expiration Date:</label>
+                        <input type="text" id="expirationDate" name="expirationDate" placeholder="MM/YY" required pattern="(0[1-9]|1[0-2])\/[0-9]{2}" title="Please enter a valid expiration date (MM/YY)">
+
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" name="cvv" required pattern="[0-9]{3}" title="Please enter a valid CVV (3 digits)">
+                    </div>
+                </div>
+
+                <div class="terms">
+                    <label>
+                        <input type="checkbox" required>
+                        I agree to the <a href="#">Terms and Conditions</a>.
+                    </label>
+                </div>
+
+                <a class="normalbtn" href="CheckoutDone.html">Confirm Payment Method</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Kyusi Esports. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="Modeofpayment.js"></script>
+</body>
+</html>

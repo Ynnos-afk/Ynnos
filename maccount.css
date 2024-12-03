@@ -1,0 +1,149 @@
+@font-face {
+    src: url(qcefonts/Zuume\ Regular.ttf);
+    font-family: Zuume;
+}
+
+@font-face {
+    src: url(qcefonts/Zuume\ ExtraLight.ttf);
+    font-family: ZuumeEL;
+}
+
+@font-face {
+    src: url(qcefonts/Zuume\ Light.ttf);
+    font-family: ZuumeL;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: #fff;
+  display: flex;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  margin-top: 10px;
+  margin-left: 20px;
+  width: 250px;
+  background-color: #1c1c1c;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50%;
+  border-radius: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+.signout {
+  background-color:#1c1c1c;
+  color: #fff;
+  padding: 10px;
+  border-top: 1px solid grey;
+  border-bottom: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  cursor: pointer;
+  text-align: center;
+  
+}
+
+.profile-content {
+  flex: 1;
+  padding: 40px;
+}
+
+.profile-content h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.profile-details {
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 10px;
+  height: 60%;
+}
+
+.profile-details h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.profile-details h2 span {
+  font-size: 18px;
+  color: #ccc;
+}
+
+.fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+
+.field input {
+  background-color: #2a2a2a;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  color: #fff;
+  width: 200px;
+}
+
+.field input[readonly] {
+  cursor: not-allowed;
+}
+
+.change-account {
+  background-color: #cd2042;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0px 5px;
+}
+
+.delete-account {
+  border: none;
+  background: transparent;
+  color: #cd2042;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0px 5px;
+}
+
+/*SECURITY*/
+
+  
